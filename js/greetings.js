@@ -16,8 +16,6 @@ function onLoginSubmit(event) {
   paintGreeting(userName);
 }
 
-loginForm.addEventListener("submit", onLoginSubmit);
-
 // paint greeting fn
 function paintGreeting(userName) {
   greeting.innerText = `Hello ${userName}`;
@@ -26,6 +24,7 @@ function paintGreeting(userName) {
 
 // save user name
 const saveUserName = localStorage.getItem(USERNAME_KEY);
+
 if (saveUserName === null) {
   // show the form
   loginForm.classList.remove(HIDDEN_CLASSNAME);
