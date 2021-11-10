@@ -1,12 +1,13 @@
 // img array
-const imgs = ["0.jpg", "1.jpg", "2.jpg", "3.jpg", "4.jpg"];
+const imgs = [];
+
+// img array for fn
+for (i = 1; i <= 5; i++) {
+  imgs.push(`${i}.jpg`);
+}
 
 // ramdom imgs
 const imgSelec = imgs[Math.floor(Math.random() * imgs.length)];
 
-// create img elements
-const bgImg = document.createElement("img");
-bgImg.src = `img/${imgSelec}`;
-
-// append and paint img
-document.body.appendChild(bgImg);
+// print bg img
+document.body.style.backgroundImage = `url("/img/${imgSelec}")`;
