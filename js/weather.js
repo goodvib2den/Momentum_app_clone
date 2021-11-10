@@ -9,8 +9,10 @@ function onGeo(position) {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      const weather = document.querySelector("#weather span:first-child");
-      const city = document.querySelector("#weather span:last-child");
+      const temp = document.querySelector("#weather span:nth-of-type(1)");
+      const weather = document.querySelector("#weather span:nth-of-type(2)");
+      const city = document.querySelector("#weather span:nth-of-type(3)");
+      temp.innerText = data.main.temp;
       weather.innerText = data.weather[0].main;
       city.innerText = data.name;
     });
