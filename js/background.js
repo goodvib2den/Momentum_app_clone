@@ -10,4 +10,4 @@ for (i = 1; i <= 5; i++) {
 const imgSelec = imgs[Math.floor(Math.random() * imgs.length)];
 
 // print bg img
-document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url("/img/${imgSelec}")`;
+document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url("../img/${imgSelec}")`;
