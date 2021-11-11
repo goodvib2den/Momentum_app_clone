@@ -1,3 +1,332 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+input {
+  border: none;
+}
+
+/* mixin */
+/* styling */
 .hidden {
+  display: none !important;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+h2#clock {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 100px;
+  letter-spacing: 10px;
+  font-weight: 900;
+  color: #eee;
+  opacity: 0.9;
+  cursor: default;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  section {
+    width: 90%;
+    max-width: 1600px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section {
+    width: 95%;
+  }
+}
+
+section #login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 24px;
+  transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+section #login-form b {
+  display: block;
+  padding: 15px 50px;
+  margin-bottom: 25px;
+  border-radius: 36px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #eee;
+  word-break: keep-all;
+  transition: all 0.6s;
+}
+
+section #login-form input {
+  width: 100%;
+  max-width: 200px;
+  height: 35px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  text-align: center;
+  background: rgba(238, 238, 238, 0.2);
+  transition: all 1s;
+}
+
+section #login-form input::placeholder {
+  color: rgba(238, 238, 238, 0.9);
+}
+
+section #login-form input:focus {
+  color: #000;
+  background: #ccc;
+  outline: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+section #login-form input:focus::selection {
+  background-color: #666;
+}
+
+section #login-form input:focus::placeholder {
+  opacity: 0;
+}
+
+section #login-form button {
+  width: 100%;
+  max-width: 120px;
+  padding: 5px 0;
+  border: 1px solid #00c471;
+  border-radius: 16px;
+  color: #00c471;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+section #login-form:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+section #login-form:hover b {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+section #login-form:hover button:hover {
+  color: #eee;
+  background: #00c471;
+}
+
+section #greeting {
+  max-width: 350px;
+  padding: 10px 30px;
+  border-radius: 32px;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #eee;
+  cursor: default;
+  transition: all 0.6s;
+}
+
+section #greeting::after {
+  content: "👋";
+  margin-left: 5px;
+}
+
+section #greeting:hover {
+  transform: scale(1.15) translateY(-15px);
+  background-color: rgba(238, 238, 238, 0.2);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(4px);
+}
+
+section #todo-form input {
+  width: 250px;
+  height: 35px;
+  border-bottom: 1px solid rgba(238, 238, 238, 0.4);
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  text-align: center;
+  background: none;
+  transition: all 0.3s;
+}
+
+section #todo-form input::placeholder {
+  color: rgba(238, 238, 238, 0.6);
+}
+
+section #todo-form input:focus {
+  color: #000;
+  background: #ccc;
+  border-radius: 16px;
+  outline: 1px solid #ccc;
+}
+
+section #todo-form input:focus::selection {
+  background-color: #666;
+}
+
+section #todo-form input:focus::placeholder {
+  opacity: 0;
+}
+
+section #todo-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+}
+
+section #todo-list li span {
+  color: #eee;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+section #todo-list li button {
+  cursor: pointer;
+}
+
+#weather {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: default;
+  opacity: 0.6;
+}
+
+#weather span {
+  font-size: 12px;
+  font-weight: 200;
+  color: #eee;
+}
+
+#weather span::after {
+  content: "|";
+  margin-left: 3px;
+}
+
+#weather span:first-child::after {
+  content: "℃ |";
+}
+
+#weather span:last-child::after {
   display: none;
 }
+
+#quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  color: #eee;
+  text-align: center;
+  opacity: 0.4;
+  transition: all 0.3s;
+}
+
+#quote:hover {
+  opacity: 1;
+}
+
+#quote span {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+}
+
+.visit {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  color: #eee;
+  opacity: 0.4;
+  transition: all 0.6s;
+}
+
+.visit:link {
+  text-decoration: none;
+}
+
+.visit:visited {
+  text-decoration: none;
+}
+
+.visit:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.visit:active {
+  text-decoration: none;
+}
+
+/* 도움말 만드는중
+.info-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #eee;
+  cursor: help;
+  opacity: 0.4;
+  color: #000;
+  text-align: center;
+  transition: all 1s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+*/

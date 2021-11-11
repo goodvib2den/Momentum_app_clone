@@ -1,4 +1,4 @@
-// all variable
+// DON variable
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
@@ -18,7 +18,7 @@ function onLoginSubmit(event) {
 
 // paint greeting fn
 function paintGreeting(userName) {
-  greeting.innerText = `Hello ${userName}`;
+  greeting.innerText = `안녕하세요. ${userName}`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
