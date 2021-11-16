@@ -1,10 +1,5 @@
 // img empty array
-const imgs = [];
-
-// img array push fn
-for (i = 1; i <= 5; i++) {
-  imgs.push(`${i}.jpg`);
-}
+const imgs = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"];
 
 // random imgs
 const imgSelec = imgs[Math.floor(Math.random() * imgs.length)];
